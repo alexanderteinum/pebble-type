@@ -1,0 +1,31 @@
+{
+  "name": "type",
+  "author": "Alexander Teinum",
+  "version": "1.0.0",
+  "keywords": [
+    "pebble-app"
+  ],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Type",
+    "uuid": "ea56009a-a4d8-4bf5-91bb-6ee21729c75a",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "basalt"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+      "media": []
+    },
+    "capabilities": [
+      "health"
+    ]
+  }
+}
