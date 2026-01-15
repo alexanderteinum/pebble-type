@@ -1,0 +1,12 @@
+# .clang-format configuration for Pebble C code
+---
+BasedOnStyle: LLVM
+IndentWidth: 2
+ColumnLimit: 100
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+PointerAlignment: Right
+SpaceAfterCStyleCast: true
+BreakBeforeBraces: Linux
