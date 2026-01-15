@@ -1,5 +1,7 @@
 # Type
 
+[![Build](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml/badge.svg)](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml)
+
 **Type** is an opinionated, minimalist watchface for Pebble Time and Time Steel.
 
 It is built on a simple premise: A smartwatch should be a watch first. It prioritizes instant legibility, native performance, and hardware empathy over feature bloat.
