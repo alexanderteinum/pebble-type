@@ -4,7 +4,7 @@ A minimalist, typography-driven watchface for Pebble Time and Time Steel.
 
 **Type** is designed to display only the essential data using a balanced, vertical layout. It relies on font weight and size to create visual hierarchy, rather than icons or clutter.
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.jpg)
 
 ## Features
 
