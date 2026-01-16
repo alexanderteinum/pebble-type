@@ -4,11 +4,24 @@ static Window *s_main_window;
 static TextLayer *s_steps_layer;
 static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
-static TextLayer *s_battery_layer;
+static Layer *s_battery_layer;
+static bool s_battery_low = false;
 
-static void handle_battery(BatteryChargeState charge_state) {
-  bool is_low = charge_state.charge_percent <= 20;
-  layer_set_hidden(text_layer_get_layer(s_battery_layer), !is_low);
+static void battery_update_proc(Layer *layer, GContext *ctx) {
+  if (!s_battery_low) {
+    return;
+  }
+
+  GRect bounds = layer_get_bounds(layer);
+
+#ifdef PBL_ROUND
+  graphics_context_set_stroke_color(ctx, GColorRed);
+  graphics_context_set_stroke_width(ctx, 6);
+  graphics_draw_circle(ctx, GPoint(bounds.size.w / 2, bounds.size.h / 2), (bounds.size.w / 2) - 2);
+#else
+  graphics_context_set_fill_color(ctx, GColorRed);
+  graphics_fill_rect(ctx, GRect(0, 0, bounds.size.w, 6), 0, GCornerNone);
+#endif
 }
 
 static void update_time() {
@@ -33,15 +46,19 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
 }
 
+static void handle_battery(BatteryChargeState charge_state) {
+  s_battery_low = charge_state.charge_percent <= 20;
+  layer_mark_dirty(s_battery_layer);
+}
+
 static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
-  int screen_h = 168;
   int small_font_h = 14;
   int time_font_h = 29;
 
-  int time_y = (screen_h - time_font_h) / 2;
+  int time_y = (bounds.size.h - time_font_h) / 2;
   int steps_y = (time_y - small_font_h) / 2;
   int date_y = (time_y + time_font_h) + steps_y;
 
@@ -66,16 +83,16 @@ static void main_window_load(Window *window) {
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_date_layer));
 
-  s_battery_layer = text_layer_create(GRect(0, 0, bounds.size.w, 1));
-  text_layer_set_background_color(s_battery_layer, GColorRed);
-  layer_add_child(window_layer, text_layer_get_layer(s_battery_layer));
+  s_battery_layer = layer_create(bounds);
+  layer_set_update_proc(s_battery_layer, battery_update_proc);
+  layer_add_child(window_layer, s_battery_layer);
 }
 
 static void main_window_unload(Window *window) {
   text_layer_destroy(s_steps_layer);
   text_layer_destroy(s_time_layer);
   text_layer_destroy(s_date_layer);
-  text_layer_destroy(s_battery_layer);
+  layer_destroy(s_battery_layer);
 }
 
 static void init() {
