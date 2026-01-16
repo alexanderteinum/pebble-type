@@ -34,7 +34,7 @@ echo "Creating tag v$VERSION..."
 git tag -a "v$VERSION" -m "Release version $VERSION"
 
 echo "Pushing tag..."
-git push fork "v$VERSION"
+git push origin "v$VERSION"
 
 echo "✓ Release $VERSION created successfully!"
 echo "GitHub Actions will now build and create the release."
