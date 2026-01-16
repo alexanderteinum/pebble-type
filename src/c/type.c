@@ -5,24 +5,7 @@ static TextLayer *s_steps_layer;
 static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
 static Layer *s_battery_layer;
-static bool s_battery_low = false;
-
-static void battery_update_proc(Layer *layer, GContext *ctx) {
-  if (!s_battery_low) {
-    return;
-  }
-
-  GRect bounds = layer_get_bounds(layer);
-
-#ifdef PBL_ROUND
-  graphics_context_set_stroke_color(ctx, GColorRed);
-  graphics_context_set_stroke_width(ctx, 6);
-  graphics_draw_circle(ctx, GPoint(bounds.size.w / 2, bounds.size.h / 2), (bounds.size.w / 2) - 2);
-#else
-  graphics_context_set_fill_color(ctx, GColorRed);
-  graphics_fill_rect(ctx, GRect(0, 0, bounds.size.w, 6), 0, GCornerNone);
-#endif
-}
+static bool s_battery_low;
 
 static void update_time() {
   time_t temp = time(NULL);
@@ -44,6 +27,23 @@ static void update_time() {
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
+}
+
+static void battery_update_proc(Layer *layer, GContext *ctx) {
+  if (!s_battery_low) {
+    return;
+  }
+
+  GRect bounds = layer_get_bounds(layer);
+
+#ifdef PBL_ROUND
+  graphics_context_set_stroke_color(ctx, GColorRed);
+  graphics_context_set_stroke_width(ctx, 6);
+  graphics_draw_circle(ctx, GPoint(bounds.size.w / 2, bounds.size.h / 2), (bounds.size.w / 2) - 2);
+#else
+  graphics_context_set_fill_color(ctx, GColorRed);
+  graphics_fill_rect(ctx, GRect(0, 0, bounds.size.w, 6), 0, GCornerNone);
+#endif
 }
 
 static void handle_battery(BatteryChargeState charge_state) {
