@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml/badge.svg)](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml)
 
-Type is an opinionated, minimalist watchface for Pebble. It prioritizes instant legibility and native performance over complexity.
+An opinionated, minimalist watchface for Pebble prioritizing instant legibility and native performance.
 
 ![Screenshot](screenshot.png)
 
