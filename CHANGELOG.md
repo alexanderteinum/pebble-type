@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 – 2026-01-16
+
+- Added support for all current devices.
+- Improved visibility of the low battery indicator.
+
 ## 0.2.0 – 2026-01-16
 
 - Added smart date formatting: Displays `MM-DD` when 12h clock is selected, and `DD-MM` for 24h clock.
