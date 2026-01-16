@@ -6,7 +6,7 @@
 
 It is built on a simple premise: A smartwatch should be a watch first. It prioritizes instant legibility, native performance, and hardware empathy over feature bloat.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](screenshot.png)
 
 ## Design Philosophy & Features
 
