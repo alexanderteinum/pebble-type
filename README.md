@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml/badge.svg)](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml)
 
-**Type** is an opinionated, minimalist watchface for Pebble.
+Type is an opinionated, minimalist watchface for Pebble.
 
 It is built on a simple premise: A smartwatch should be a watch first. It prioritizes instant legibility, native performance, and hardware empathy over feature bloat.
 
@@ -13,8 +13,8 @@ It is built on a simple premise: A smartwatch should be a watch first. It priori
 
 - **Hardware Empathy:** Designed specifically for the reflective Memory LCD. Black text on a white background offers superior contrast in all lighting conditions.
 - **Zero Latency:** Relies exclusively on on-device data (Time & Health API). No web APIs, no loading times, and zero impact on phone battery.
-- **Typographic Hierarchy:** A vertically balanced stack using native system fonts (`LECO` and `Gothic`) for crisp, artifact-free rendering.
-- **Calm Tech:** The interface remains distraction-free. A **red line** appears along the **edge of the screen** when the battery drops to **20% or lower**.
+- **Typographic Hierarchy:** A vertically balanced stack using native system fonts (LECO and Gothic) for crisp, artifact-free rendering.
+- **Calm Tech:** The interface remains distraction-free. A red line appears along the edge of the screen when the battery drops to 20% or lower.
 
 ## Build from source
 
@@ -26,7 +26,6 @@ pebble build
 
 # Install to watch
 pebble install --cloudpebble
-
 ```
 
 ## License
