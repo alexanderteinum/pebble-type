@@ -20,7 +20,7 @@ static void update_time() {
   text_layer_set_text(s_time_layer, s_time_buffer);
 
   static char s_date_buffer[8];
-  strftime(s_date_buffer, sizeof(s_date_buffer), "%d-%m", tick_time);
+  strftime(s_date_buffer, sizeof(s_date_buffer), clock_is_24h_style() ? "%d-%m" : "%m-%d", tick_time);
   text_layer_set_text(s_date_layer, s_date_buffer);
 
   int step_count = (int)health_service_sum_today(HealthMetricStepCount);
