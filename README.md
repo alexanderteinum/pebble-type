@@ -14,7 +14,7 @@ Type is an opinionated, minimalist watchface for Pebble. It prioritizes instant 
 - **Typographic Hierarchy:** A vertically balanced stack using native system fonts (LECO and Gothic) for crisp, artifact-free rendering.
 - **Calm Tech:** The interface remains distraction-free. A red line appears along the edge of the screen when the battery drops to 20% or lower.
 
-## Build from source
+## Build From Source
 
 Ensure you have the Pebble SDK installed.
 
@@ -28,4 +28,4 @@ pebble install --cloudpebble
 
 ## License
 
-MIT License. Free to use, modify, and learn from.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
