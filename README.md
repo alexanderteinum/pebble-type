@@ -11,7 +11,7 @@ Type is an opinionated, minimalist watchface for Pebble. It prioritizes instant 
 
 - **High Contrast:** Designed specifically for the reflective Memory LCD. Black text on a white background offers superior contrast in all lighting conditions.
 - **Zero Latency:** Relies exclusively on on-device data (Time & Health API). No web APIs, no loading times, and zero impact on phone battery.
-- **Typographic Hierarchy:** A vertically balanced stack using native system fonts (LECO and Gothic) for crisp, artifact-free rendering.
+- **Typographic Hierarchy:** A vertically balanced stack using native system fonts (Bitham and Gothic) for crisp, artifact-free rendering.
 - **Calm Tech:** The interface remains distraction-free. A red line appears along the edge of the screen when the battery drops to 20% or lower.
 
 ## Build From Source

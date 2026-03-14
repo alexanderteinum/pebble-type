@@ -55,7 +55,7 @@ static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
-  int small_font_h = 14;
+  int small_font_h = 18;
   int time_font_h = 29;
 
   int time_y = (bounds.size.h - time_font_h) / 2;
@@ -65,21 +65,21 @@ static void main_window_load(Window *window) {
   s_steps_layer = text_layer_create(GRect(0, steps_y - 10, bounds.size.w, small_font_h + 10));
   text_layer_set_background_color(s_steps_layer, GColorClear);
   text_layer_set_text_color(s_steps_layer, GColorBlack);
-  text_layer_set_font(s_steps_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  text_layer_set_font(s_steps_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text_alignment(s_steps_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_steps_layer));
 
   s_time_layer = text_layer_create(GRect(0, time_y - 13, bounds.size.w, time_font_h + 13));
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
-  text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_LECO_42_NUMBERS));
+  text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
 
   s_date_layer = text_layer_create(GRect(0, date_y - 10, bounds.size.w, small_font_h + 10));
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, GColorBlack);
-  text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_date_layer));
 
