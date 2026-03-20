@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0 – 2026-03-20
+
+- Changed fonts to Inter.
+
 ## 0.4.0 – 2026-03-20
 
 - Changed the time font from LECO to Bitham.
