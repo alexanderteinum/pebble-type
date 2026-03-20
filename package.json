@@ -1,7 +1,7 @@
 {
   "name": "type",
   "author": "Alexander Teinum",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "keywords": [
     "pebble-app"
   ],
@@ -36,7 +36,7 @@
         },
         {
           "type": "font",
-          "name": "FONT_INTER_42",
+          "name": "FONT_INTER_44",
           "file": "Inter-SemiBold.ttf"
         }
       ]

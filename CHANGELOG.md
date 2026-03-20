@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 – 2026-03-20
+
+- Changed time font size from 42 to 44.
+
 ## 0.6.0 – 2026-03-20
 
 - Added support for Pebble Round 2.

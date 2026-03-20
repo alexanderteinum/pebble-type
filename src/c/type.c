@@ -7,7 +7,7 @@ static TextLayer *s_date_layer;
 static Layer *s_battery_layer;
 static bool s_battery_low;
 static GFont s_font_24;
-static GFont s_font_42;
+static GFont s_font_44;
 
 static void update_time() {
   time_t temp = time(NULL);
@@ -55,16 +55,16 @@ static void handle_battery(BatteryChargeState charge_state) {
 
 static void main_window_load(Window *window) {
   s_font_24 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_INTER_24));
-  s_font_42 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_INTER_42));
+  s_font_44 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_INTER_44));
 
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
   int small_font_h = 18;
-  int time_font_h = 31;
+  int time_font_h = 32;
 
   int small_font_compensate = 6;
-  int time_font_compensate = 11;
+  int time_font_compensate = 12;
 
   int time_y = (bounds.size.h - time_font_h) / 2;
   int steps_y = (time_y - small_font_h) / 2;
@@ -81,7 +81,7 @@ static void main_window_load(Window *window) {
   s_time_layer = text_layer_create(GRect(0, time_y - time_font_compensate, bounds.size.w, time_font_h + time_font_compensate));
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
-  text_layer_set_font(s_time_layer, s_font_42);
+  text_layer_set_font(s_time_layer, s_font_44);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
 
@@ -104,7 +104,7 @@ static void main_window_unload(Window *window) {
   layer_destroy(s_battery_layer);
 
   fonts_unload_custom_font(s_font_24);
-  fonts_unload_custom_font(s_font_42);
+  fonts_unload_custom_font(s_font_44);
 }
 
 static void init() {
