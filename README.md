@@ -12,7 +12,7 @@ Type is a minimalist watchface for Pebble, built for legibility and clean aesthe
 - **Inter Typography:** Uses the Inter typeface for a modern, refined look.
 - **High Contrast:** Black text on a white background for superior visibility on the Memory LCD.
 - **Calm Tech:** No distractions. A subtle red line appears only when the battery drops below 20%.
-- **Purely Local:** Uses on-device data only (Time & Health API). No Bluetooth required, no impact on phone battery.
+- **Purely Local:** Uses on-device data only (Time & Health API). No Bluetooth required.
 
 ## Build From Source
 
