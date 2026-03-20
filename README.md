@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml/badge.svg)](https://github.com/alexanderteinum/pebble-type/actions/workflows/build.yml)
 
-Type is a minimalist watchface for Pebble, built for legibility and clean aesthetics.
+Type is an open source, minimalist watchface for Pebble, built for legibility and clean aesthetics.
 
 ![Screenshot](screenshot.png)
 
