@@ -14,6 +14,10 @@ Type is a minimalist watchface for Pebble, built for legibility and clean aesthe
 - **Calm Tech:** No distractions. A subtle red line appears only when the battery drops below 20%.
 - **Purely Local:** Uses on-device data only (Time & Health API). No internet required, no impact on phone battery.
 
+## Credits
+
+- **Inter Font:** Designed by Rasmus Andersson. Licensed under the [SIL Open Font License, Version 1.1](https://scripts.sil.org/OFL).
+
 ## Build From Source
 
 Ensure you have the Pebble SDK installed.
