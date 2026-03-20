@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0 – 2026-03-20
+
+- Added support for Pebble Round 2.
+
 ## 0.5.0 – 2026-03-20
 
 - Changed fonts to Inter.
