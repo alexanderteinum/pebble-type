@@ -6,6 +6,8 @@ static TextLayer *s_time_layer;
 static TextLayer *s_date_layer;
 static Layer *s_battery_layer;
 static bool s_battery_low;
+static GFont s_font_24;
+static GFont s_font_42;
 
 static void update_time() {
   time_t temp = time(NULL);
@@ -52,34 +54,41 @@ static void handle_battery(BatteryChargeState charge_state) {
 }
 
 static void main_window_load(Window *window) {
+  s_font_24 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_INTER_24));
+  s_font_42 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_INTER_42));
+
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
   int small_font_h = 18;
-  int time_font_h = 29;
+  int time_font_h = 31;
+
+  int small_font_compensate = 6;
+  int time_font_compensate = 11;
 
   int time_y = (bounds.size.h - time_font_h) / 2;
   int steps_y = (time_y - small_font_h) / 2;
   int date_y = (time_y + time_font_h) + steps_y;
 
-  s_steps_layer = text_layer_create(GRect(0, steps_y - 10, bounds.size.w, small_font_h + 10));
+
+  s_steps_layer = text_layer_create(GRect(0, steps_y - small_font_compensate, bounds.size.w, small_font_h + small_font_compensate));
   text_layer_set_background_color(s_steps_layer, GColorClear);
   text_layer_set_text_color(s_steps_layer, GColorBlack);
-  text_layer_set_font(s_steps_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_font(s_steps_layer, s_font_24);
   text_layer_set_text_alignment(s_steps_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_steps_layer));
 
-  s_time_layer = text_layer_create(GRect(0, time_y - 13, bounds.size.w, time_font_h + 13));
+  s_time_layer = text_layer_create(GRect(0, time_y - time_font_compensate, bounds.size.w, time_font_h + time_font_compensate));
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
-  text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+  text_layer_set_font(s_time_layer, s_font_42);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
 
-  s_date_layer = text_layer_create(GRect(0, date_y - 10, bounds.size.w, small_font_h + 10));
+  s_date_layer = text_layer_create(GRect(0, date_y - small_font_compensate, bounds.size.w, small_font_h + small_font_compensate));
   text_layer_set_background_color(s_date_layer, GColorClear);
   text_layer_set_text_color(s_date_layer, GColorBlack);
-  text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_font(s_date_layer, s_font_24);
   text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_date_layer));
 
@@ -93,6 +102,9 @@ static void main_window_unload(Window *window) {
   text_layer_destroy(s_time_layer);
   text_layer_destroy(s_date_layer);
   layer_destroy(s_battery_layer);
+
+  fonts_unload_custom_font(s_font_24);
+  fonts_unload_custom_font(s_font_42);
 }
 
 static void init() {

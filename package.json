@@ -27,7 +27,18 @@
       "dummy"
     ],
     "resources": {
-      "media": []
+      "media": [
+        {
+          "type": "font",
+          "name": "FONT_INTER_24",
+          "file": "Inter-SemiBold.ttf"
+        },
+        {
+          "type": "font",
+          "name": "FONT_INTER_42",
+          "file": "Inter-SemiBold.ttf"
+        }
+      ]
     },
     "capabilities": [
       "health"
