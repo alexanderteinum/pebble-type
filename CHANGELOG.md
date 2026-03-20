@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 – 2026-03-20
+
+- Changed the time font from LECO to Bitham.
+- Increased font size for steps and date.
+
 ## 0.3.0 – 2026-01-16
 
 - Added support for all current devices.
