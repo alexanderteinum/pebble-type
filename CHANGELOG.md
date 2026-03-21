@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0 – 2026-03-21
+
+- Reduced steps and and date font size for smaller devices.
+
 ## 0.7.0 – 2026-03-20
 
 - Changed time font size from 42 to 44.
