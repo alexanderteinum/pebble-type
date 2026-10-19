@@ -31,6 +31,10 @@ pebble install --cloudpebble
 - **Inter Font:** Designed by Rasmus Andersson. Licensed under the [SIL Open Font License, Version 1.1](https://scripts.sil.org/OFL).
 - **Screenshot Device Frame:** From the Rebble App Store.
 
+## Development
+
+Built with assistance from Gemini.
+
 ## License
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+[MIT](LICENSE) © 2026 Alexander Teinum.
